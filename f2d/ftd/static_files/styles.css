@@ -1,0 +1,218 @@
+@font-face {
+    font-family: "MobFont";
+    src: url("assets/Mobsters.ttf");
+}
+
+body {
+    background-color: coral;
+    width: 100%;
+    height: 100%;
+    margin: 0px; 
+    padding: 0px;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+#stage {
+    background-color: green;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+
+ /* The alert message box */
+ .login_alert, .register_alert, .profile_alert {
+    color: red;
+    width: 100%;
+    height: 25%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+ .game_results {
+    color: black;
+    font-size: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.title {
+    font-family: 'MobFont';
+    font-weight:normal;
+    font-style:normal;
+    font-size: 3em;
+    text-align: center;
+}
+
+.form-title {
+    font-family: 'MobFont';
+    font-weight:normal;
+    font-style:normal;
+    font-size: 36px;
+}
+
+.white-box {
+    background-color: whitesmoke;
+    border-radius: 25px;
+    border: 5px solid black;
+    position: fixed;
+    width: 50%;
+    height: 35%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin-top: 50px;
+}
+
+.input-text {
+    background-color: whitesmoke;
+    width: 80%;
+    height: 15%;
+    margin-bottom:0.5%;
+    border-radius: 25px;
+    border: 2px solid black;
+    font-size:24px;
+    font-family: 'MobFont';
+    font-weight:normal;
+    font-style:normal;
+    text-align: center;
+}
+
+.submit {
+    background-color: whitesmoke;
+    width: 40%;
+    height: 15%;
+    margin-bottom:1%;
+    border-radius: 25px;
+    border: 2px solid black;
+    font-size:24px;
+    font-family: 'MobFont';
+    font-weight:normal;
+    font-style:normal;
+    text-align: center;
+    position: relative;
+    z-index:99;
+}
+
+.submit:hover {
+    background-color: gray;
+    width: 40%;
+    height: 15%;
+    margin-bottom:1%;
+    border-radius: 25px;
+    border: 2px solid black;
+    font-size:24px;
+    font-family: 'MobFont';
+    font-weight:normal;
+    font-style:normal;
+    text-align: center;
+    position: relative;
+}
+
+.stats-container {
+    width: 100vw;
+    height: 100vh;
+    float: left;
+    text-align: center;
+}
+
+.personal-box{
+    background-color: whitesmoke;
+    border-radius: 25px;
+    border: 5px solid black;
+    position: relative;
+    width: 30%;
+    height: 50%;
+    left: 15%;
+    text-align: center;
+    margin-top: 50px;
+    float: left;
+}
+
+.leaderboard-box{
+    background-color: whitesmoke;
+    border-radius: 25px;
+    border: 5px solid black;
+    position: relative;
+    width: 30%;
+    height: 50%;
+ 
+    right: 15%;
+   
+    text-align: center;
+    margin-top: 50px;
+    float: right;
+}
+#statstomenu{
+    margin-top: 25px;
+}
+
+#yourstats{
+    font-family: Arial;   
+}
+
+#leadertable{
+    text-align: center;
+    font-family: Arial;
+    margin: auto;
+    width: 80%;
+}
+
+.tablerow{
+    background-color: #ffba8c;
+}
+
+#personalboxstats{
+    font-size: 60pt!important;
+    font-family: "MobFont";
+}
+
+.profile-white-box {
+    background-color: whitesmoke;
+    border-radius: 25px;
+    border: 5px solid black;
+    position: fixed;
+    width: 60%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin-top: 50px;
+}
+
+#circlebody { 
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background: #ff1000;
+}
+
+#circlehead { 
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background: #ff1000;
+}
+
+.colorpicker{
+    margin: auto;
+}
+
+#profilebuttons{
+    margin-top: 15px;
+}
+
+

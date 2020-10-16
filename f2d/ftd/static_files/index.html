@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta HTTP-EQUIV="EXPIRES" CONTENT="-1">
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<title>Computing Science 309</title>
+
+		<script language="javascript" src="./models/stage.js" ></script>
+		<script language="javascript" src="./models/players.js" ></script>
+		<script language="javascript" src="./models/obstacles.js" ></script>
+		<script language="javascript" src="./models/utils.js" ></script>
+		<script language="javascript" src="./models/bullet.js" ></script>
+		<script language="javascript" src="./models/guns.js" ></script>
+		<script language="javascript" src="./models/storm.js" ></script>
+		<script language="javascript" src="./models/build.js" ></script>
+		<script language="javascript" src="./models/mysteryFloor.js" ></script>
+		<script language="javascript" src="controller.js" > </script>
+		<script language="javascript" src="jquery-3.3.1.min.js" > </script>
+		<script language="javascript" src="ftdClient.js" > </script>
+	</head>
+	<body onresize="resize_canvas()" >
+		<h1 id="title" class="title">Cowboys vs Aliens</h1>
+		<div class="container" id="ui_login">
+			<div class="white-box">
+				<h2 class="form-title">Login</h2>
+				<div id="login_form">
+					<form id="loginForm" >
+						<input class="input-text" id="login_username" type="text" name="user" placeholder="User Name" title="Alphanumeric only 3-20 characters" pattern="^([a-z]|[A-Z]|[0-9]){3,20}$"/>
+						<input class="input-text" id="login_password" type="password" name="password" placeholder="Password" title="Alphanumeric only 7-20 characters" pattern="^([a-z]|[A-Z]|[0-9]){7,20}$"/>
+						<input type="submit" style="visibility: hidden;width:-1%;height:-1%;position:absolute;">
+					</form>
+					<div>
+						<button class="submit" id="loginSubmit">Login</button>
+						<button class="submit" id="toRegister">Register</button>
+					</div>
+					<div class="login_alert">
+						<p id='login_err'>
+					</div> 
+				</div>
+			</div>
+		</div>
+		<div class="container" id="ui_register">
+			<div class="white-box">
+				<h2 class="form-title">Register</h2>
+				<div id="register_form">
+					<form id="registerForm">
+						<input class="input-text" id="register_username" type="text" name="user" placeholder="User Name" title="Alphanumeric only 3-20 characters" pattern="^([a-z]|[A-Z]|[0-9]){3,20}$"/>
+						<input class="input-text" id="register_password" type="password" name="password" placeholder="Password" title="Alphanumeric only 7-20 characters" pattern="^([a-z]|[A-Z]|[0-9]){7,20}$"/>
+						<input type="submit" style="visibility: hidden;width:-1%;height:-1%;position:absolute;">
+					</form>
+					<div>
+						<button class="submit" id="registerSubmit">Register</button>
+						<button class="submit" id="toLogin">Login</button>
+					</div>
+					<div class="register_alert">
+						<p id='register_err'>
+					</div> 
+				</div>
+			</div>
+		</div>
+		<div class="container" id="ui_menu">
+			<div class="white-box">
+				<h2 class="form-title">Menu</h2>
+				<div id="menu_form">
+					<div>
+						<button class="submit" id="PlayButton">Play</button><br>
+						<button class="submit" id="ProfileButton">Profile</button><br>
+						<button class="submit" id="StatsButton">Player Stats</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container" id="ui_401">
+			<h1 class="form-title">401 FORBIDDEN ACCESS</h1>	
+		</div>
+		
+		<div class="stats-container" id="ui_stats">
+			<h1 class="title">Stats</h1>
+			<div class="personal-box" id="personalbox">
+				<h2 class="form-title">Your Total Kills</h2>
+				<p id="personalboxstats"></p>
+				<div class="personalstats_alert">
+					<p id='personalstats_err'>
+				</div> 
+			</div>
+			<div class="leaderboard-box">
+				<h2 class="form-title">Leaderboards</h2>
+				
+				<table id="leadertable"> 
+					<tr>
+						<th>Username</th>
+						<th>Total Kills</th>
+					</tr>
+					<tr class="tablerow">
+						<td id="name0"></td>
+						<td id="score0"></td>
+					</tr>
+					<tr>
+						<td id="name1"></td>
+						<td id="score1"></td>
+					</tr>
+					<tr class="tablerow">
+						<td id="name2"></td>
+						<td id="score2"></td>
+					</tr>
+					<tr>
+						<td id="name3"></td>
+						<td id="score3"></td>
+					</tr>
+					<tr class="tablerow">
+						<td id="name4"></td>
+						<td id="score4"></td>
+					</tr>
+					<tr>
+						<td id="name5"></td>
+						<td id="score5"></td>
+					</tr>
+					<tr class="tablerow">
+						<td id="name6"></td>
+						<td id="score6"></td>
+					</tr>
+					<tr>
+						<td id="name7"></td>
+						<td id="score7"></td>
+					</tr>
+					<tr class="tablerow">
+						<td id="name8"></td>
+						<td id="score8"></td>
+					</tr>
+					<tr>
+						<td id="name9"></td>
+						<td id="score9"></td>
+					</tr>
+
+				</table>
+			</div>
+			<div class="nav_buttons">
+				<button class="submit" id="statstomenu">Menu</button>
+			</div>
+		</div>
+
+		<div class="container" id="ui_profile">
+			<div class="profile-white-box">
+				<h2 class="title">Profile</h2>
+
+				<div id="profile-text-input">
+					<label class="colorpicker" for="spritecolorhead">Select your ammo outline color:</label>
+					<input type="color" id="spritecolorhead" name="spritecolorhead" value="#ff1000">
+					<br><br>
+					<label class= "colorpicker" for="spritecolorbody">Select your body color:</label>
+					<input type="color" id="spritecolorbody" name="spritecolorbody" value="#ff1000">
+					<br><br>
+					<div id="circlehead"></div>
+					<div id="circlebody"></div>
+					<br>
+					<div>
+						<button class="submit" id="colorUpdate">Apply</button>
+					</div>
+					<br><br>
+
+
+					<form id="ProfileForm-password">
+						<input class="input-text" id="curr-password" type="text" name="currpassword" placeholder="currpassword" title="Alphanumeric only 3-20 characters" pattern="^([a-z]|[A-Z]|[0-9]){3,20}$"/>
+						<input class="input-text" id="new-password" type="text" name="newpassword" placeholder="newpassword" title="Alphanumeric only 7-20 characters" pattern="^([a-z]|[A-Z]|[0-9]){7,20}$"/>
+						<!--<input type="submit" style="visibility: hidden;width:-1%;height:-1%;position:absolute;">-->
+					</form>
+
+					
+					<div id="profilebuttons">
+						<button class="submit" id="profileUpdate">Update</button>
+						<button class="submit" id="profileDelete">Delete Account</button>
+					</div>
+
+					<div class="nav_buttons">
+						<button class="submit" id="proftomenu">Menu</button>
+					</div>
+					
+					<div class="profile_alert">
+						<p id='profile_err'>
+					</div> 
+				</div>
+
+			</div>
+		
+		</div>
+		<div class="container" id="pauseGame">
+			<div class="white-box">
+				<h2 class="form-title">Pause Screen</h2>
+				<div id="menu_form">
+				<button class="submit" id="restartGameButton">Restart Game</button></br>
+				<button class="submit" id="quitGameButton">Back to Main Menu</button></br>
+				<button class="submit" id="unpauseButton">Unpause</button>
+				</div>
+			</div>
+		</div>
+		<div class="container" id="Game_Finished">
+			<div class="white-box">
+				<h2 class="form-title" id="game_status"></h2>
+				<div> 
+					<p id="game_results"></p>
+				</div>
+				<div id="menu_form">
+					<button class="submit" id="restartGameButtonFinished">Restart Game</button></br>
+					<button class="submit" id="quitGameButtonFinished">Back to Main Menu</button></br>
+				</div>
+			</div>
+		</div>
+		<canvas id="stage"> </canvas>
+	</body>
+</html>

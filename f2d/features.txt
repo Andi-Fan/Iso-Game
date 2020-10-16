@@ -1,0 +1,31 @@
+An itemized list of additional features:
+
+1) Grappling Gun
+2) ShotGun
+3) ShotGun AI - Special AI which uses the shotgun and grappling hook together to ruin your life
+4) Grenade Launcher - Does blast damage
+5) Grenade Launcher fires sprite based projectiles
+6) Minimap 
+7) Storm - Display
+8) Storm deals damage
+9) Hashed Password
+10) Pause screen
+11) Game Over/Game win alerts
+12) Build mode if you press 'e' on your keyboard
+13) Build has collisions with other builds
+14) Build can be destoried with bullets and supports player and enemy collision
+15) 3 different types of players (Player, regular AI, ShortGun AI) 
+16) All 3 actors behave differently 
+17) Hook gun has collisoins with builds as well
+18) In total 3 type of destoryable objects (Barrel, Crate, Build)
+19) Barrel and Crate drop items to be picked up
+20) Mystery buffs
+21) - Restore HP
+22) - Get teleported
+23) - Become smaller or bigger for a certain amount of duration
+24) - Become slower or fast for a certain duration
+25) Player can choose actor color from profile page.
+26) Hold down mouse to fire
+27) Walk diagonally
+28) Cooldown for guns (so they cant be spammed)
+29) Bullet variance (accuracy)
